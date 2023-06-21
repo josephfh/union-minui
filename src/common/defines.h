@@ -57,7 +57,7 @@
 #define RECENT_PATH USERDATA_PATH "/.minui/recent.txt"
 #define FAUX_RECENT_PATH SDCARD_PATH "/Recently Played"
 #define FAVORITE_PATH USERDATA_PATH "/.minui/favorite.txt"
-#define FAUX_FAVORITE_PATH SDCARD_PATH "/Favorites"
+#define FAUX_FAVORITE_PATH SDCARD_PATH "/Favourites"
 #define COLLECTIONS_PATH SDCARD_PATH "/Collections"
 #define BATTERY_PATH SDCARD_PATH "/battery.txt"
 

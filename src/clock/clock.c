@@ -209,11 +209,11 @@ int main(int argc , char* argv[]) {
 			select_cursor++;
 			if (select_cursor >= option_count) select_cursor -= option_count;
 		}
-		else if (PAD_justPressed(BTN_A)) {
+		else if (PAD_justPressed(BTN_B)) {
 			save_changes = 1;
 			quit = 1;
 		}
-		else if (PAD_justPressed(BTN_B)) {
+		else if (PAD_justPressed(BTN_A)) {
 			quit = 1;
 		}
 		else if (PAD_justPressed(BTN_SELECT)) {
@@ -245,7 +245,7 @@ int main(int argc , char* argv[]) {
 			}
 			else GFX_blitButtonGroup((char*[]){ "SELECT",show_24hour?"12 HOUR":"24 HOUR", NULL }, screen, 0);
 
-			GFX_blitButtonGroup((char*[]){ "B","CANCEL", "A","SET", NULL }, screen, 1);
+			GFX_blitButtonGroup((char*[]){ "B","SET", "A","CANCEL", NULL }, screen, 1);
 		
 			// 376 or 446
 			int ox = (screen->w - (show_24hour?376:446)) / 2;

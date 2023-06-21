@@ -3075,7 +3075,7 @@ static int Menu_message(char* message, char** pairs) {
 		GFX_startFrame();
 		PAD_poll();
 
-		if (PAD_justPressed(BTN_A) || PAD_justPressed(BTN_B)) break;
+		if (PAD_justPressed(BTN_B) || PAD_justPressed(BTN_A)) break;
 		
 		POW_update(&dirty, NULL, Menu_beforeSleep, Menu_afterSleep);
 		
@@ -3152,7 +3152,7 @@ static int OptionEmulator_optionChanged(MenuList* list, int i) {
 static int OptionEmulator_optionDetail(MenuList* list, int i) {
 	MenuItem* item = &list->items[i];
 	Option* option = OptionList_getOption(&config.core, item->key);
-	if (option->full) return Menu_message(option->full, (char*[]){ "B","BACK", NULL });
+	if (option->full) return Menu_message(option->full, (char*[]){ "A","BACK", NULL });
 	else return MENU_CALLBACK_NOP;
 }
 static MenuList OptionEmulator_menu = {
@@ -3207,7 +3207,7 @@ static int OptionEmulator_openMenu(MenuList* list, int i) {
 		Menu_options(&OptionEmulator_menu);
 	}
 	else {
-		Menu_message("This core has no options.", (char*[]){ "B","BACK", NULL });
+		Menu_message("This core has no options.", (char*[]){ "A","BACK", NULL });
 	}
 	
 	return MENU_CALLBACK_NOP;
@@ -3515,10 +3515,10 @@ static int Menu_options(MenuList* list) {
 		}
 		
 		// uint32_t now = SDL_GetTicks();
-		if (PAD_justPressed(BTN_B)) { // || PAD_tappedMenu(now)
+		if (PAD_justPressed(BTN_A)) { // || PAD_tappedMenu(now)
 			show_options = 0;
 		}
-		else if (PAD_justPressed(BTN_A)) {
+		else if (PAD_justPressed(BTN_B)) {
 			MenuItem* item = &items[selected];
 			int result = MENU_CALLBACK_NOP;
 			if (item->on_confirm) result = item->on_confirm(list, selected); // item-specific action, eg. Save for all games
@@ -3983,11 +3983,11 @@ static void Menu_loop(void) {
 		}
 		
 		
-		if (PAD_justPressed(BTN_B) || PAD_tappedMenu(now)) {
+		if (PAD_justPressed(BTN_A) || PAD_tappedMenu(now)) {
 			status = STATUS_CONT;
 			show_menu = 0;
 		}
-		else if (PAD_justPressed(BTN_A)) {
+		else if (PAD_justPressed(BTN_B)) {
 			switch(selected) {
 				case ITEM_CONT:
 				if (total_discs && rom_disc!=disc) {
@@ -4090,7 +4090,7 @@ static void Menu_loop(void) {
 				else GFX_blitButtonGroup((char*[]){ "MENU","BRIGHTNESS",  NULL }, screen, 0);
 			}
 			else GFX_blitButtonGroup((char*[]){ "POWER","SLEEP", NULL }, screen, 0);
-			GFX_blitButtonGroup((char*[]){ "B","BACK", "A","OKAY", NULL }, screen, 1);
+			GFX_blitButtonGroup((char*[]){ "B","SELECT", "A","BACK", NULL }, screen, 1);
 			
 			// list
 			oy = 35;

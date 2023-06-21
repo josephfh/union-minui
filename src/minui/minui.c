@@ -1313,7 +1313,7 @@ int main (int argc, char *argv[]) {
 		int total = top->entries->count;
 		
 		if (show_version) {
-			if (PAD_justPressed(BTN_B) || PAD_tappedMenu(now)) {
+			if (PAD_justPressed(BTN_A) || PAD_tappedMenu(now)) {
 				show_version = 0;
 				dirty = 1;
 			}
@@ -1427,14 +1427,14 @@ int main (int argc, char *argv[]) {
 				Entry_open(top->entries->items[top->selected]);
 				dirty = 1;
 			}
-			else if (total>0 && PAD_justPressed(BTN_A)) {
+			else if (total>0 && PAD_justPressed(BTN_B)) {
 				Entry_open(top->entries->items[top->selected]);
 				total = top->entries->count;
 				dirty = 1;
 
 				if (total>0) readyResume(top->entries->items[top->selected]);
 			}
-			else if (PAD_justPressed(BTN_B) && stack->count>1) {
+			else if (PAD_justPressed(BTN_A) && stack->count>1) {
 				closeDirectory();
 				total = top->entries->count;
 				dirty = 1;
@@ -1526,7 +1526,7 @@ int main (int argc, char *argv[]) {
 					GFX_blitButtonGroup((char*[]){ "POWER","SLEEP",  NULL }, screen, 0);
 				}
 				
-				GFX_blitButtonGroup((char*[]){ "B","BACK",  NULL }, screen, 1);
+				GFX_blitButtonGroup((char*[]){ "A","BACK",  NULL }, screen, 1);
 			}
 			else {
 				// list
@@ -1610,15 +1610,15 @@ int main (int argc, char *argv[]) {
 			
 				if (total==0) {
 					if (stack->count>1) {
-						GFX_blitButtonGroup((char*[]){ "B","BACK",  NULL }, screen, 1);
+						GFX_blitButtonGroup((char*[]){ "A","BACK",  NULL }, screen, 1);
 					}
 				}
 				else {
 					if (stack->count>1) {
-						GFX_blitButtonGroup((char*[]){ "B","BACK", "A","OPEN", NULL }, screen, 1);
+						GFX_blitButtonGroup((char*[]){ "B","SELECT", "A","BACK", NULL }, screen, 1);
 					}
 					else {
-						GFX_blitButtonGroup((char*[]){ "A","OPEN", NULL }, screen, 1);
+						GFX_blitButtonGroup((char*[]){ "B","SELECT", NULL }, screen, 1);
 					}
 				}
 			}
