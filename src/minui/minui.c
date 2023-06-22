@@ -1540,14 +1540,20 @@ int main (int argc, char *argv[]) {
 						if (i==top->start) available_width -= ow;
 					
 						SDL_Color text_color = COLOR_WHITE;
-						if (isFavorite(entry->path)) {
-							text_color = COLOR_GOLD;
-						}
+						// if (isFavorite(entry->path)) {
+						// 	text_color = COLOR_GOLD;
+						// }
 					
 						trimSortingMeta(&entry_name);
 					
 						char display_name[256];
-						int text_width = GFX_truncateText(font.large, entry_unique ? entry_unique : entry_name, display_name, available_width, SCALE1(BUTTON_PADDING*2));
+						char calculated_name[256] = "*";
+                        if (isFavorite(entry->path)) {
+							strcat(calculated_name, entry_unique ? entry_unique : entry_name);
+						} else {
+							strcpy(calculated_name, entry_unique ? entry_unique : entry_name);
+						}
+					    int text_width = GFX_truncateText(font.large, calculated_name, display_name, available_width, SCALE1(BUTTON_PADDING*2));
 						int max_width = MIN(available_width, text_width);
 						if (j==selected_row) {
 							GFX_blitPill(ASSET_WHITE_PILL, screen, &(SDL_Rect){
@@ -1557,9 +1563,9 @@ int main (int argc, char *argv[]) {
 								SCALE1(PILL_SIZE)
 							});
 							text_color = COLOR_BLACK;
-							if (isFavorite(entry->path)) {
-								text_color = COLOR_GOLD;
-							}
+							// if (isFavorite(entry->path)) {
+							// 	text_color = COLOR_GOLD;
+							// }
 						}
 						else if (entry->unique) {
 							trimSortingMeta(&entry_unique);
