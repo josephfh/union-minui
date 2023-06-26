@@ -76,21 +76,21 @@ bundle:
 	cp ./src/clear_recent/clear_recent.elf "./build/EXTRAS/Tools/rg35xx/Clear Recently Played.pak"
 
 	# stock cores
-	cp ./cores/output/fceumm_libretro.so ./build/SYSTEM/rg35xx/cores
-	cp ./cores/output/gambatte_libretro.so ./build/SYSTEM/rg35xx/cores
-	cp ./cores/output/gpsp_libretro.so ./build/SYSTEM/rg35xx/cores
-	cp ./cores/output/pcsx_rearmed_libretro.so ./build/SYSTEM/rg35xx/cores
-	cp ./cores/output/picodrive_libretro.so ./build/SYSTEM/rg35xx/cores
-	cp ./cores/output/snes9x2005_plus_libretro.so ./build/SYSTEM/rg35xx/cores
+	# cp ./cores/output/fceumm_libretro.so ./build/SYSTEM/rg35xx/cores
+	# cp ./cores/output/gambatte_libretro.so ./build/SYSTEM/rg35xx/cores
+	# cp ./cores/output/gpsp_libretro.so ./build/SYSTEM/rg35xx/cores
+	# cp ./cores/output/pcsx_rearmed_libretro.so ./build/SYSTEM/rg35xx/cores
+	# cp ./cores/output/picodrive_libretro.so ./build/SYSTEM/rg35xx/cores
+	# cp ./cores/output/snes9x2005_plus_libretro.so ./build/SYSTEM/rg35xx/cores
 
 	# extras
-	cp ./cores/output/mame2003_plus_libretro.so ./build/EXTRAS/Emus/rg35xx/MAME.pak
-	cp ./cores/output/mgba_libretro.so ./build/EXTRAS/Emus/rg35xx/MGBA.pak
-	cp ./cores/output/mgba_libretro.so ./build/EXTRAS/Emus/rg35xx/SGB.pak
-	cp ./cores/output/mednafen_pce_fast_libretro.so ./build/EXTRAS/Emus/rg35xx/PCE.pak
-	cp ./cores/output/mednafen_supafaust_libretro.so ./build/EXTRAS/Emus/rg35xx/SUPA.pak
-	cp ./cores/output/mednafen_vb_libretro.so ./build/EXTRAS/Emus/rg35xx/VB.pak
-	cp ./cores/output/pokemini_libretro.so ./build/EXTRAS/Emus/rg35xx/PKM.pak
+	# cp ./cores/output/mame2003_plus_libretro.so ./build/EXTRAS/Emus/rg35xx/MAME.pak
+	# cp ./cores/output/mgba_libretro.so ./build/EXTRAS/Emus/rg35xx/MGBA.pak
+	# cp ./cores/output/mgba_libretro.so ./build/EXTRAS/Emus/rg35xx/SGB.pak
+	# cp ./cores/output/mednafen_pce_fast_libretro.so ./build/EXTRAS/Emus/rg35xx/PCE.pak
+	# cp ./cores/output/mednafen_supafaust_libretro.so ./build/EXTRAS/Emus/rg35xx/SUPA.pak
+	# cp ./cores/output/mednafen_vb_libretro.so ./build/EXTRAS/Emus/rg35xx/VB.pak
+	# cp ./cores/output/pokemini_libretro.so ./build/EXTRAS/Emus/rg35xx/PKM.pak
 	cp ./other/DinguxCommander/output/DinguxCommander ./build/EXTRAS/Tools/rg35xx/Files.pak
 	cp -R ./other/DinguxCommander/res ./build/EXTRAS/Tools/rg35xx/Files.pak/
 
